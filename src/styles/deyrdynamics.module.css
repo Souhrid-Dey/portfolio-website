@@ -1,0 +1,174 @@
+.labSection {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  position: relative;
+}
+
+.brandGlow {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #a855f7 50%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+  letter-spacing: -1px;
+}
+
+.labGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.labCard {
+  background: linear-gradient(180deg, rgba(24, 17, 56, 0.75) 0%, rgba(13, 9, 32, 0.85) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.labCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #d946ef, #6366f1);
+  opacity: 0.8;
+}
+
+.labCard:hover {
+  background: linear-gradient(180deg, rgba(35, 24, 80, 0.85) 0%, rgba(18, 12, 45, 0.95) 100%);
+  border-color: var(--accent-lilac);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(168, 85, 247, 0.35);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.labBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(217, 70, 239, 0.15);
+  border: 1px solid rgba(217, 70, 239, 0.35);
+  color: #f472b6;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cardLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconLink {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.iconLink:hover {
+  background: rgba(168, 85, 247, 0.25);
+  color: #ffffff;
+  border-color: var(--accent-purple);
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+
+.cardSubtitle {
+  font-size: 0.82rem;
+  color: var(--accent-lilac);
+  font-family: var(--font-mono);
+  margin-bottom: 1rem;
+}
+
+.cardSummary {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem;
+  background: rgba(9, 6, 22, 0.75);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.metricItem {
+  text-align: left;
+}
+
+.metricValue {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent-lilac);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metricLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.tagCluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--accent-lilac);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+@media (max-width: 992px) {
+  .labGrid {
+    grid-template-columns: 1fr;
+  }
+}

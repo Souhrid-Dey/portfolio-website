@@ -1,0 +1,19 @@
+{
+  "name": "Souhrid Dey",
+  "role": "Data Scientist & Analytics Specialist",
+  "title": "Souhrid Dey | Data Scientist & Machine Learning Engineer",
+  "description": "Portfolio of Souhrid Dey — Data Scientist with 6+ years in corporate financial analytics & BI (Maersk, Genpact, Eaton) and formal PGP Data Science from UT Austin (4.07/4.33 GPA). Specializing in predictive ML, statistical inference, SQL, and agentic GenAI.",
+  "location": "Pune, Maharashtra, India",
+  "email": "dsouhrid@gmail.com",
+  "lab_email": "deyrdynamicslab@gmail.com",
+  "lab_name": "Dey'r Dynamics Lab",
+  "availability": "Open to Data Science & ML Opportunities",
+  "stats": [
+    { "label": "Enterprise Experience", "value": "6+ Years", "sub": "Maersk, Genpact, Eaton" },
+    { "label": "Portfolio Projects", "value": "13", "sub": "ML, Stats, SQL & GenAI" },
+    { "label": "UT Austin PGP GPA", "value": "4.07", "sub": "Out of 4.33 (Top Decile)" },
+    { "label": "Hackathon Finish", "value": "Rank 2", "sub": "Shinkansen ML Challenge" }
+  ],
+  "tagline": "Uncovering the subtle patterns in complex data to drive high-impact strategic decisions.",
+  "bio": "I am a Data Scientist and Financial Data Analyst who unites 6+ years of corporate FP&A, business intelligence, and financial modeling with rigorous Machine Learning and statistical expertise. Having analyzed multi-million-dollar operational variances and engineered production BI systems at Maersk, Genpact, and Eaton, I build data science solutions that solve real business problems — from predictive churn modeling and actuarial risk analytics to agentic GenAI applications."
+}

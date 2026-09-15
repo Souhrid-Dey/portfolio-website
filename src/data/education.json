@@ -1,0 +1,46 @@
+[
+  {
+    "degree": "Post Graduate Program in Data Science and Business Analytics",
+    "institution": "The University of Texas at Austin (McCombs School of Business) & Great Lakes Executive Learning",
+    "period": "2024 – 2025",
+    "grade": "GPA: 4.07 / 4.33 (Top Decile — 92%)",
+    "status": "Completed with Distinction",
+    "highlights": [
+      "Rigorous dual-credential curriculum covering Supervised & Unsupervised ML, Econometric Modeling, Neural Networks, Advanced SQL, and Tableau.",
+      "Completed 10 comprehensive industry-grade projects + 1 Capstone Project (Telecom Churn, XGBoost, 91.48% Recall).",
+      "Ranked 2nd Overall in the PGP Shinkansen Passenger Satisfaction Machine Learning Hackathon (95.70% Accuracy)."
+    ],
+    "skills": ["Machine Learning", "Statistical Inference", "Econometrics", "Ensemble Models", "SQL", "Tableau", "GenAI"]
+  },
+  {
+    "degree": "Bachelor of Commerce, Major in Business Administration",
+    "institution": "Brihan Maharashtra College of Commerce, Pune (Savitribai Phule Pune University)",
+    "period": "Jul 2017 – May 2020",
+    "grade": "7.5 CGPA / 10.0 CGPA",
+    "status": "Graduated",
+    "highlights": [
+      "Rigorous coursework spanning macro & micro economics, financial accounting, statistics, and advanced business administration.",
+      "Completed a Data Analyst Internship focusing on financial portfolio modeling, where I designed automated reporting dashboards and reduced weekly data processing time by 30%.",
+      "Gained hands-on business operations experience as a Summer Intern, performing descriptive analytics on regional sales data to identify key growth opportunities and streamline inventory."
+    ],
+    "skills": ["Finance", "Economics", "Business Administration", "Statistics", "Analytics"]
+  },
+  {
+    "degree": "Higher Secondary Certificate (HSC)",
+    "institution": "St. Xavier's School, Malda",
+    "period": "2015",
+    "grade": "72.6%",
+    "status": "Graduated",
+    "highlights": [],
+    "skills": []
+  },
+  {
+    "degree": "Class X - Secondary School Certificate (SSC)",
+    "institution": "Ramakrishna Mission Vidyapith, Deoghar",
+    "period": "2013",
+    "grade": "9.8 CGPA / 10.0 CGPA",
+    "status": "Graduated",
+    "highlights": [],
+    "skills": []
+  }
+]

@@ -1,0 +1,278 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 20;
+}
+
+.filterBtn {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: rgba(19, 14, 42, 0.7);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  background: rgba(28, 21, 61, 0.9);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.filterActive {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+}
+
+/* Tier Headers */
+.tierHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.tierBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-lilac);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tierDivider {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-medium) 0%, transparent 100%);
+}
+
+/* Hero Grid (Tier 1) */
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Supporting Grid (Tier 2) */
+.supportingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Compact Grid (Tier 3) */
+.compactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* Project Card Common Styles */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), var(--glow-violet-subtle);
+}
+
+.cardHero {
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.cardTier1 {
+  background: linear-gradient(145deg, rgba(30, 25, 45, 0.85) 0%, rgba(50, 40, 15, 0.65) 100%);
+  border-color: rgba(218, 165, 32, 0.25);
+}
+
+.cardTier1:hover {
+  box-shadow: 0 12px 35px rgba(218, 165, 32, 0.15), 0 0 30px rgba(139, 92, 246, 0.45);
+  border-color: rgba(218, 165, 32, 0.6);
+}
+
+.cardTier2 {
+  background: linear-gradient(145deg, rgba(20, 15, 35, 0.85) 0%, rgba(45, 45, 55, 0.65) 100%);
+  border-color: rgba(192, 192, 192, 0.25);
+}
+
+.cardTier2:hover {
+  box-shadow: 0 12px 35px rgba(192, 192, 192, 0.15), 0 0 25px rgba(139, 92, 246, 0.35);
+  border-color: rgba(192, 192, 192, 0.6);
+}
+
+.cardTier3 {
+  background: linear-gradient(145deg, rgba(25, 15, 30, 0.85) 0%, rgba(45, 25, 15, 0.65) 100%);
+  border-color: rgba(205, 127, 50, 0.25);
+}
+
+.cardTier3:hover {
+  box-shadow: 0 12px 35px rgba(205, 127, 50, 0.15), 0 0 20px rgba(139, 92, 246, 0.25);
+  border-color: rgba(205, 127, 50, 0.6);
+}
+
+/* New Image Styles */
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(7, 5, 16, 0.9));
+}
+
+.categoryTagImg {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(139, 92, 246, 0.85);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.cardSubtitle {
+  font-size: 0.82rem;
+  color: var(--accent-lilac);
+  font-family: var(--font-mono);
+  margin-bottom: 1.2rem;
+}
+
+.tagCluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cardFooter {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.2);
+}
+
+.viewCaseBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.viewCaseBtn:hover {
+  color: var(--accent-primary);
+}
+
+.cardLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconLink {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.iconLink:hover {
+  background: rgba(139, 92, 246, 0.25);
+  color: #ffffff;
+  border-color: var(--accent-violet);
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .heroGrid,
+  .supportingGrid,
+  .compactGrid {
+    grid-template-columns: 1fr;
+  }
+}

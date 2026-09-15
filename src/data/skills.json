@@ -1,0 +1,73 @@
+[
+  {
+    "category": "Machine Learning & AI",
+    "description": "Supervised, unsupervised, and ensemble modeling with scikit-learn, XGBoost, and CatBoost.",
+    "skills": [
+      { "name": "XGBoost & LightGBM", "level": "Expert", "highlight": true },
+      { "name": "Random Forest & Ensembles", "level": "Expert", "highlight": true },
+      { "name": "Scikit-Learn", "level": "Expert", "highlight": true },
+      { "name": "SMOTE & Class Balancing", "level": "Advanced", "highlight": false },
+      { "name": "Clustering (K-Means / Hierarchical)", "level": "Advanced", "highlight": false },
+      { "name": "Hyperparameter Tuning (Optuna / GridSearch)", "level": "Advanced", "highlight": false },
+      { "name": "Cost-Matrix & Threshold Tuning", "level": "Advanced", "highlight": true }
+    ]
+  },
+  {
+    "category": "Statistical Modeling & Econometrics",
+    "description": "Hypothesis testing, regression diagnostics, ANOVA, and econometric inference.",
+    "skills": [
+      { "name": "Hypothesis Testing (t-tests, Chi-Square)", "level": "Expert", "highlight": true },
+      { "name": "ANOVA & Post-Hoc Analysis", "level": "Expert", "highlight": false },
+      { "name": "OLS & HC3 Robust Regression", "level": "Expert", "highlight": true },
+      { "name": "Multicollinearity Diagnostics (VIF)", "level": "Expert", "highlight": false },
+      { "name": "Statsmodels & SciPy", "level": "Expert", "highlight": true },
+      { "name": "Exploratory Data Analysis (EDA)", "level": "Expert", "highlight": false }
+    ]
+  },
+  {
+    "category": "Generative AI & LLMs",
+    "description": "Agentic system design, prompt engineering, structured outputs, and LLM streaming.",
+    "skills": [
+      { "name": "Google Gemini 2.0 Flash", "level": "Advanced", "highlight": true },
+      { "name": "Anthropic Claude 3.5 Sonnet", "level": "Advanced", "highlight": true },
+      { "name": "Agentic Workflows & Tool Calling", "level": "Advanced", "highlight": true },
+      { "name": "FastAPI & Pydantic Validation", "level": "Advanced", "highlight": false },
+      { "name": "Prompt Engineering & Evaluation", "level": "Expert", "highlight": false },
+      { "name": "Streaming SSE Protocols", "level": "Proficient", "highlight": false }
+    ]
+  },
+  {
+    "category": "Business Intelligence & Data Viz",
+    "description": "Interactive corporate dashboards, executive reporting, and visual storytelling.",
+    "skills": [
+      { "name": "Power BI & DAX Modeling", "level": "Expert", "highlight": true },
+      { "name": "Tableau Public & Storyboarding", "level": "Expert", "highlight": true },
+      { "name": "Executive KPI Dashboards", "level": "Expert", "highlight": true },
+      { "name": "Matplotlib & Seaborn", "level": "Expert", "highlight": false },
+      { "name": "Financial Analytics & FP&A", "level": "Expert", "highlight": true }
+    ]
+  },
+  {
+    "category": "SQL & Data Engineering",
+    "description": "Complex relational querying, data aggregation, window functions, and analytics ETL.",
+    "skills": [
+      { "name": "MySQL & PostgreSQL", "level": "Expert", "highlight": true },
+      { "name": "Window Functions & CTEs", "level": "Expert", "highlight": true },
+      { "name": "Data Wrangling (Pandas / NumPy)", "level": "Expert", "highlight": true },
+      { "name": "Database Schema Design", "level": "Advanced", "highlight": false },
+      { "name": "Supabase & Edge Integration", "level": "Proficient", "highlight": false }
+    ]
+  },
+  {
+    "category": "Languages & Modern Tech",
+    "description": "Core programming languages, frameworks, and developer toolchains.",
+    "skills": [
+      { "name": "Python 3.x", "level": "Primary Language", "highlight": true },
+      { "name": "SQL (ANSI / MySQL / Postgres)", "level": "Primary Language", "highlight": true },
+      { "name": "JavaScript / Next.js", "level": "Proficient", "highlight": false },
+      { "name": "Git & GitHub Version Control", "level": "Advanced", "highlight": false },
+      { "name": "Jupyter Notebooks", "level": "Expert", "highlight": false },
+      { "name": "Vercel Cloud Deployment", "level": "Proficient", "highlight": false }
+    ]
+  }
+]

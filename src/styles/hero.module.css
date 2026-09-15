@@ -1,0 +1,188 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 4rem;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: 700px; /* Constrain text so it doesn't overlap the right side too much */
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.heroCanvasContainer {
+  position: fixed; /* Fixed so it stays in background while scrolling down */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Behind text but above deep space */
+  pointer-events: none !important; /* Let clicks pass through to background/text */
+}
+
+.heroCanvasContainer * {
+  pointer-events: none !important;
+}
+
+/* We still want Three.js to receive pointer events for mouse tracking, 
+   so we can enable it specifically for the canvas if needed, but R3F 
+   can track window pointer events with a custom event source. 
+   For now, we'll let pointer-events be none to not block text. */
+
+.availabilityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.pulseGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseGreen 2s infinite;
+}
+
+.availabilityText {
+  font-size: 0.84rem;
+  font-family: var(--font-mono);
+  color: var(--accent-lilac);
+  letter-spacing: 0.03em;
+}
+
+.titleIntro {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.name {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  background: var(--gradient-hero-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.roleWrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  min-height: 5rem;
+}
+
+.rolePrefix {
+  color: var(--text-muted);
+  margin-right: 0.6rem;
+}
+
+.roleDynamic {
+  color: var(--accent-lilac);
+  border-right: 2px solid var(--accent-purple);
+  padding-right: 4px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+.lead {
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  line-height: 1.68;
+  color: var(--text-secondary);
+  margin-bottom: 2.25rem;
+  max-width: 760px;
+}
+
+.leadHighlight {
+  color: var(--text-violet);
+  font-weight: 600;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.socialBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.socialLabel {
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+}
+
+.socialIconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.socialIconBtn:hover {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: var(--accent-violet);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--glow-violet-subtle);
+}
+
+@keyframes pulseGreen {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    box-shadow: 0 0 12px #10b981;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--accent-purple); }
+}

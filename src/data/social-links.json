@@ -1,0 +1,44 @@
+[
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/souhrid-dey/",
+    "handle": "souhrid-dey",
+    "icon": "Linkedin",
+    "primary": true
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/Souhrid-Dey",
+    "handle": "Souhrid-Dey",
+    "icon": "Github",
+    "primary": true
+  },
+  {
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/souhriddey",
+    "handle": "souhriddey",
+    "icon": "Database",
+    "primary": true
+  },
+  {
+    "name": "LeetCode",
+    "url": "https://leetcode.com/u/Souhrid_Dey/",
+    "handle": "Souhrid_Dey",
+    "icon": "Code2",
+    "primary": true
+  },
+  {
+    "name": "Tableau",
+    "url": "https://public.tableau.com/app/profile/souhrid.dey/vizzes",
+    "handle": "souhrid.dey",
+    "icon": "BarChart3",
+    "primary": true
+  },
+  {
+    "name": "Email",
+    "url": "/#contact",
+    "handle": "dsouhrid@gmail.com",
+    "icon": "Mail",
+    "primary": true
+  }
+]

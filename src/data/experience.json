@@ -1,0 +1,46 @@
+[
+  {
+    "company": "AP Moller Maersk",
+    "role": "Financial Data Analyst",
+    "location": "Pune, Hybrid",
+    "period": "Apr 2024 – Present",
+    "type": "Full-Time",
+    "summary": "Power BI developer in the COE - Reporting team of FP&A for the Logistics and Services business of Maersk, responsible for translating complex financial data into clear, actionable insights for key business leaders.",
+    "highlights": [
+      "Develop, deploy, and maintain dynamic and scalable Power BI dashboards for global, regional, and product-specific financial analysis.",
+      "Engineer and optimize data workflows using Power Query and Dataflows to ensure data integrity; design and implement complex data models in Power BI.",
+      "Author complex DAX measures and functions to calculate critical KPIs, perform time-intelligence analysis, and create calculation groups using Tabular Editor.",
+      "Own a portfolio of key financial reports, managing the end-to-end lifecycle and utilizing DAX Studio for performance tuning."
+    ],
+    "skills": ["Power BI", "DAX", "Power Query", "Financial Modeling", "Data Transformation", "Agile/Jira"]
+  },
+  {
+    "company": "Genpact",
+    "role": "Process Developer",
+    "location": "Pune, Hybrid",
+    "period": "Jul 2023 – Mar 2024",
+    "type": "Full-Time",
+    "summary": "Handled Credit and Collection activities for Eaton’s Filtration Division of North America, utilizing advanced data skills for reporting and deliverables.",
+    "highlights": [
+      "Used advanced Excel skills to prepare reports for the client and Genpact’s deliverables.",
+      "Prepared SOPs and documented previous data for better visualization and integration.",
+      "Analyzed opportunities for Continuous Improvement, Risk Management, and Lean Strategic implementations."
+    ],
+    "skills": ["Advanced Excel", "Reporting", "Process Improvement", "Risk Management", "SOP Documentation"]
+  },
+  {
+    "company": "Eaton",
+    "role": "Associate Analyst",
+    "location": "Pune, Hybrid",
+    "period": "Jun 2020 – Jul 2023",
+    "type": "Full-Time",
+    "summary": "Handled Credit and Collections for Filtration Division of North American region in Order-to-Cash (OTC) process for Eaton's Global Financial Systems and Services (GFSS).",
+    "highlights": [
+      "Interacted with customers for collection of past dues, remittances, and debit memos.",
+      "Analyzed and investigated deductions and claims on receipts, successfully resolving disputes.",
+      "Managed customer setup, account creation, credit review analysis, and maintenance.",
+      "Handled AR invoicing, maintenance, and generated ad-hoc reports for the team."
+    ],
+    "skills": ["Credit & Collections", "Order-to-Cash (OTC)", "Dispute Resolution", "AR Invoicing", "Customer Setup"]
+  }
+]
