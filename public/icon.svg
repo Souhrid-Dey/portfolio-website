@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e143d" />
+      <stop offset="70%" stop-color="#0c081e" />
+      <stop offset="100%" stop-color="#06040f" />
+    </radialGradient>
+
+    <!-- Core Glow Gradient -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#d8b4fe" />
+      <stop offset="70%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Ring Gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas: Rounded Squircle -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Observatory Aperture Outer Ring -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="2 3" />
+
+  <!-- Observatory Ticks / Crosshairs (Astronomical Coordinates) -->
+  <line x1="32" y1="5" x2="32" y2="10" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" />
+  <line x1="32" y1="54" x2="32" y2="59" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" />
+  <line x1="5" y1="32" x2="10" y2="32" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" />
+  <line x1="54" y1="32" x2="59" y2="32" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Dynamic Elliptical Orbit (Data Horizon) -->
+  <ellipse cx="32" cy="32" rx="20" ry="8" fill="none" stroke="url(#ringGrad)" stroke-width="1.8" transform="rotate(-30 32 32)" filter="url(#glow)" />
+
+  <!-- Orbiting Data Node (Signal Particle) -->
+  <circle cx="48" cy="23" r="2.2" fill="#38bdf8" filter="url(#glow)" />
+
+  <!-- Central Stellar Core / Quantum Node Glow -->
+  <circle cx="32" cy="32" r="10" fill="url(#coreGlow)" />
+
+  <!-- Precision 4-Point Starburst (The Observatory Focal Lens) -->
+  <path d="M 32 17 Q 32 32 17 32 Q 32 32 32 47 Q 32 32 47 32 Q 32 32 32 17 Z" fill="#ffffff" filter="url(#glow)" />
+  <circle cx="32" cy="32" r="2" fill="#c084fc" />
+</svg>

@@ -23,6 +23,13 @@ export const metadata = {
   ],
   authors: [{ name: siteConfig.name, url: 'https://github.com/Souhrid-Dey' }],
   creator: siteConfig.name,
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
