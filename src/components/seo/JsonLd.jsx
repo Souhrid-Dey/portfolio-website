@@ -4,7 +4,7 @@ import socialLinks from '../../data/social-links.json';
 export default function JsonLd() {
   const sameAsUrls = socialLinks
     .map((s) => s.url)
-    .filter((url) => !url.startsWith('mailto:'));
+    .filter((url) => url.startsWith('http'));
 
   const structuredData = {
     '@context': 'https://schema.org',
