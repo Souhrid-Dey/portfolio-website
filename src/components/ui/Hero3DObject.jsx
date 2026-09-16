@@ -11,14 +11,45 @@ export default function Hero3DObject() {
   const linesRef = useRef(null);
   const sparksRef = useRef(null);
   const mouse = useRef({ x: 0, y: 0 });
+  const scrollOffset = useRef(0);
+  const isMobileRef = useRef(false);
   
   useEffect(() => {
+    const checkMobile = () => {
+      isMobileRef.current = window.innerWidth < 768;
+    };
+    checkMobile();
+
     const handleMouseMove = (e) => {
       mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       mouse.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+
+    const handleTouch = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        mouse.current.x = (touch.clientX / window.innerWidth) * 2 - 1;
+        mouse.current.y = -(touch.clientY / window.innerHeight) * 2 + 1;
+      }
+    };
+
+    const handleScroll = () => {
+      scrollOffset.current = window.scrollY / (window.innerHeight || 1);
+    };
+
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchstart', handleTouch, { passive: true });
+    window.addEventListener('touchmove', handleTouch, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouch);
+      window.removeEventListener('touchmove', handleTouch);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const numPoints = 1500;
@@ -95,12 +126,25 @@ export default function Hero3DObject() {
     
     const time = state.clock.getElapsedTime();
     
-    // Mouse interaction for the whole group using global listener
-    const targetX = (mouse.current.x * Math.PI) / 3;
-    const targetY = (mouse.current.y * Math.PI) / 3;
+    // Motion interaction using mouse, touch, and scroll
+    const scrollAngleY = scrollOffset.current * 0.9;
+    const scrollAngleX = scrollOffset.current * 0.45;
+    const targetX = (mouse.current.x * Math.PI) / 3 + scrollAngleY;
+    const targetY = (mouse.current.y * Math.PI) / 3 + scrollAngleX;
 
-    groupRef.current.rotation.y += (targetX - groupRef.current.rotation.y) * 0.05;
-    groupRef.current.rotation.x += (-targetY - groupRef.current.rotation.x) * 0.05;
+    groupRef.current.rotation.y += (targetX - groupRef.current.rotation.y) * 0.06;
+    groupRef.current.rotation.x += (-targetY - groupRef.current.rotation.x) * 0.06;
+
+    // Smooth responsive placement: centered and scaled for mobile screens, offset for desktop
+    const targetPosX = isMobileRef.current ? 0.35 : 2.5;
+    const targetPosY = isMobileRef.current ? 0.15 : -0.2;
+    const targetScale = isMobileRef.current ? 1.95 : 2.5;
+
+    groupRef.current.position.x += (targetPosX - groupRef.current.position.x) * 0.05;
+    groupRef.current.position.y += (targetPosY - groupRef.current.position.y) * 0.05;
+    const curScale = groupRef.current.scale.x;
+    const newScale = curScale + (targetScale - curScale) * 0.05;
+    groupRef.current.scale.set(newScale, newScale, newScale);
 
     // Slow continuous rotation of the neural net
     pointsRef.current.rotation.y = time * 0.15;

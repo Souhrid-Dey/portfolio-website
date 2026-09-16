@@ -179,6 +179,27 @@
 }
 
 @media (max-width: 640px) {
+  .roleWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    min-height: 4.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .rolePrefix {
+    margin-right: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    color: var(--text-muted);
+  }
+
+  .roleDynamic {
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
+    white-space: nowrap;
+    line-height: 1.25;
+  }
+
   .socialBar {
     flex-direction: column;
     align-items: flex-start;
