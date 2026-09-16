@@ -8,6 +8,10 @@
   <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
 </p>
 
+<p align="center">
+  <img src="public/images/portfolio_preview.png" alt="The Data Observatory Portfolio Preview" width="100%" />
+</p>
+
 An immersive, storytelling-driven portfolio website designed around the metaphor of **"The Data Observatory"**. This digital portfolio highlights Souhrid Dey's interdisciplinary journey, spanning 6+ years of enterprise financial analytics (Maersk, Genpact, Eaton) and cutting-edge Data Science & Machine Learning (UT Austin McCombs / Great Lakes PGP, 4.07/4.33 GPA).
 
 ---
