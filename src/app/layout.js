@@ -4,6 +4,7 @@ import Footer from '../components/layout/Footer';
 import ParallaxBackground from '../components/ui/ParallaxBackground';
 import JsonLd from '../components/seo/JsonLd';
 import siteConfig from '../data/site-config.json';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   metadataBase: new URL('https://souhrid.dev'),
@@ -82,6 +83,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
