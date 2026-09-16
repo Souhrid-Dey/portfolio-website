@@ -126,7 +126,7 @@ npm install
 npm run dev
 ```
 
-Open [https://portfolio-website-kappa-two-12.vercel.app](https://portfolio-website-kappa-two-12.vercel.app) with your browser to explore the live observatory, or run locally on `http://localhost:3000`.
+Open [https://souhrid-portfolio.vercel.app](https://souhrid-portfolio.vercel.app) with your browser to explore the live observatory, or run locally on `http://localhost:3000`.
 
 ---
 
