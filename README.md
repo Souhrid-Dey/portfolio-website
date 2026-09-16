@@ -35,10 +35,10 @@ graph TD
     Client[Client Browser] -->|Next.js App Router| Layout[Root Layout]
     
     subgraph Frontend [React Components]
-        Layout --> Canvas[Constellation Canvas<br/>HTML5 Canvas Element]
+        Layout --> Canvas["Constellation Canvas<br/>HTML5 Canvas Element"]
         Layout --> Nav[Navigation/Header]
         Layout --> Main[Main Content Sections]
-        Layout --> Detail[Dynamic Route<br/>/project/[id]]
+        Layout --> Detail["Dynamic Route<br/>/project/[id]"]
         
         Main --> Hero[Hero Section]
         Main --> Skills[Skills & Capabilities]
@@ -122,7 +122,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to explore the observatory.
+Open [https://portfolio-website-kappa-two-12.vercel.app](https://portfolio-website-kappa-two-12.vercel.app) with your browser to explore the live observatory, or run locally on `http://localhost:3000`.
 
 ---
 
