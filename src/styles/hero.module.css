@@ -83,6 +83,7 @@
   letter-spacing: -0.03em;
   background: var(--gradient-hero-title);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
