@@ -109,19 +109,21 @@ export default function Hero() {
 
         <div className={styles.socialBar}>
           <span className={styles.socialLabel}>Verified Observatories:</span>
-          {socialLinks.map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target={item.url.startsWith('mailto:') ? '_self' : '_blank'}
-              rel="noopener noreferrer"
-              className={styles.socialIconBtn}
-              title={item.name}
-              aria-label={item.name}
-            >
-              {getIcon(item.icon)}
-            </a>
-          ))}
+          <div className={styles.socialIconsGroup}>
+            {socialLinks.map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target={item.url.startsWith('mailto:') ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                className={styles.socialIconBtn}
+                title={item.name}
+                aria-label={item.name}
+              >
+                {getIcon(item.icon)}
+              </a>
+            ))}
+          </div>
         </div>
         </FadeIn>
         </div>

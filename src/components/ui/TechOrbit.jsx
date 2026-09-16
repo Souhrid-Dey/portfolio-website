@@ -21,13 +21,10 @@ export default function TechOrbit() {
   const speedRef = useRef(0.24);
   const targetSpeedRef = useRef(0.24);
   const isDirectlyHoveredRef = useRef(false);
+  const isManuallyResumedRef = useRef(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (isDirectlyHoveredRef.current) {
-        targetSpeedRef.current = 0;
-        return;
-      }
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       
@@ -36,23 +33,41 @@ export default function TechOrbit() {
 
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
 
-      const farDist = 380;   // Outside this distance: full speed (0.24)
-      const nearDist = 120;  // Inside this proximity: slows down to 0.03
+      // The revolving icons span horizontally ~220px from center and vertically ~50px from center
+      const boxLeft = centerX - 220;
+      const boxRight = centerX + 220;
+      const boxTop = centerY - 50;
+      const boxBottom = centerY + 50;
 
-      if (dist >= farDist) {
+      const closestX = Math.max(boxLeft, Math.min(e.clientX, boxRight));
+      const closestY = Math.max(boxTop, Math.min(e.clientY, boxBottom));
+      const dist = Math.hypot(e.clientX - closestX, e.clientY - closestY);
+
+      const triggerDistance = 100; // Trigger proximity phenomenon only within 100px of the object
+
+      if (dist >= triggerDistance) {
+        // Re-arm phenomenon once cursor moves 100px away from the object
+        isManuallyResumedRef.current = false;
         targetSpeedRef.current = 0.24;
-      } else if (dist <= nearDist) {
-        targetSpeedRef.current = 0.03;
       } else {
-        const ratio = (dist - nearDist) / (farDist - nearDist);
-        targetSpeedRef.current = 0.03 + ratio * 0.21;
+        // Within 100px of the object:
+        if (isManuallyResumedRef.current) {
+          // User clicked to resume; motion stays active until moving >100px away
+          targetSpeedRef.current = 0.24;
+        } else if (isDirectlyHoveredRef.current) {
+          targetSpeedRef.current = 0;
+        } else {
+          // Smooth deceleration as cursor approaches the object from 100px down to 0px
+          const ratio = dist / triggerDistance;
+          targetSpeedRef.current = 0.04 + ratio * 0.20;
+        }
       }
     };
 
     const handleMouseLeave = () => {
       isDirectlyHoveredRef.current = false;
+      isManuallyResumedRef.current = false;
       targetSpeedRef.current = 0.24;
     };
 
@@ -80,6 +95,21 @@ export default function TechOrbit() {
     };
   }, []);
 
+  const handleItemClick = (e) => {
+    e.stopPropagation();
+    // Reclicking on the core ecosystem icon resumes motion
+    if (isDirectlyHoveredRef.current || targetSpeedRef.current === 0) {
+      isDirectlyHoveredRef.current = false;
+      isManuallyResumedRef.current = true;
+      targetSpeedRef.current = 0.24;
+    } else {
+      // Toggle pause if clicked while already spinning
+      isDirectlyHoveredRef.current = true;
+      isManuallyResumedRef.current = false;
+      targetSpeedRef.current = 0;
+    }
+  };
+
   return (
     <div ref={containerRef} className={styles.orbitContainer}>
       <div className={styles.orbitScene}>
@@ -98,13 +128,16 @@ export default function TechOrbit() {
                   color: item.color,
                 }}
                 onMouseEnter={() => {
-                  isDirectlyHoveredRef.current = true;
-                  targetSpeedRef.current = 0;
+                  if (!isManuallyResumedRef.current) {
+                    isDirectlyHoveredRef.current = true;
+                    targetSpeedRef.current = 0;
+                  }
                 }}
                 onMouseLeave={() => {
                   isDirectlyHoveredRef.current = false;
                 }}
-                title={item.name}
+                onClick={handleItemClick}
+                title={`${item.name} — Click to resume / pause motion`}
               >
                 <div 
                   className={styles.orbitItemInner}

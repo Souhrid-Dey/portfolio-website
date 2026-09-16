@@ -92,6 +92,21 @@
 }
 
 @media (max-width: 600px) {
+  .socialRow {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+    gap: 0.4rem;
+  }
+
+  .socialIcon {
+    flex: 1;
+    max-width: 44px;
+    height: 40px;
+  }
+
   .bottomBar {
     flex-direction: column;
     text-align: center;
