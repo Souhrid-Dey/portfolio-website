@@ -15,6 +15,16 @@ const TECH_ITEMS = [
   { icon: <Settings size={30} />, name: "ETL", color: "#94a3b8" }
 ];
 
+/**
+ * TechOrbit Component
+ * 
+ * Renders a 3D revolving carousel of technology icons using CSS 3D transforms.
+ * Features proximity-based physics: the carousel slows down as the user's cursor approaches 
+ * within 100px, and pauses completely when hovering over an icon. 
+ * Includes click-to-resume interaction handling.
+ * 
+ * @returns {JSX.Element} The revolving tech ecosystem UI.
+ */
 export default function TechOrbit() {
   const [rotation, setRotation] = useState(0);
   const containerRef = useRef(null);

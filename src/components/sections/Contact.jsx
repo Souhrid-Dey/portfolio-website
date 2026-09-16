@@ -8,6 +8,15 @@ import styles from '../../styles/contact.module.css';
 import FadeIn from '../ui/FadeIn';
 import DataCore3D from '../ui/DataCore3D';
 
+/**
+ * Contact Section Component
+ * 
+ * Renders the communication hub of the portfolio, featuring direct contact details 
+ * and an interactive form. Form submissions are processed securely via a Next.js 
+ * API route (`/api/contact`), pushing directly into a Supabase PostgreSQL database.
+ * 
+ * @returns {JSX.Element} The Contact section
+ */
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',

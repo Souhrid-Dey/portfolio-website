@@ -5,6 +5,16 @@ import { useFrame } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
+/**
+ * Hero3DObject Component
+ * 
+ * Renders an interactive 3D Neural Network / Brain model using React Three Fiber.
+ * The object uses mathematical procedural generation (golden ratio spiral) to form points,
+ * connects nearby points with line segments, and features animated "sparks" for dataflow.
+ * Also includes mobile detection, scroll tracking, and mouse tracking for physics/rotation.
+ * 
+ * @returns {JSX.Element} The 3D Canvas Group element.
+ */
 export default function Hero3DObject() {
   const groupRef = useRef(null);
   const pointsRef = useRef(null);

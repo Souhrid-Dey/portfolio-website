@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, FileText, Mail } from 'lucide-react';
 import { LinkedinIcon, GithubIcon, KaggleIcon, LeetcodeIcon, TableauIcon } from '../ui/Icons';
-import ConstellationCanvas from '../ui/ConstellationCanvas';
 import ResumeModal from '../layout/ResumeModal';
 import socialLinks from '../../data/social-links.json';
 import siteConfig from '../../data/site-config.json';
@@ -12,7 +11,10 @@ import styles from '../../styles/hero.module.css';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import FadeIn from '../ui/FadeIn';
-import Hero3DObject from '../ui/Hero3DObject';
+import dynamic from 'next/dynamic';
+
+const Hero3DObject = dynamic(() => import('../ui/Hero3DObject'), { ssr: false });
+const ConstellationCanvas = dynamic(() => import('../ui/ConstellationCanvas'), { ssr: false });
 
 const ROLES = [
   'Data Scientist',
@@ -21,6 +23,16 @@ const ROLES = [
   'Agentic GenAI Developer'
 ];
 
+/**
+ * Hero Section Component
+ * 
+ * Serves as the landing view of the portfolio. Features a dynamic typing effect 
+ * for the user's role, interactive 3D elements (Constellation background and Brain object),
+ * and quick-access social links. Heavy 3D components are dynamically imported to 
+ * optimize the First Contentful Paint (FCP).
+ * 
+ * @returns {JSX.Element} The Hero Section
+ */
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
