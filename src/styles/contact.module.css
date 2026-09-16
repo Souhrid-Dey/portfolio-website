@@ -3,12 +3,19 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 3.5rem;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.directInfo {
+.contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .infoTitle {
@@ -24,12 +31,28 @@
   line-height: 1.65;
 }
 
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 320px;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+  transform: translateY(-50px);
+  pointer-events: none;
+}
+
 .detailsList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   position: relative;
   z-index: 20;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .detailCard {
@@ -41,6 +64,10 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .detailCard:hover {
@@ -62,9 +89,16 @@
   flex-shrink: 0;
 }
 
+.detailText {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
 .detailLabel {
   font-size: 0.78rem;
   color: var(--text-muted);
+  margin-bottom: 0.15rem;
 }
 
 .detailValue {
@@ -72,6 +106,11 @@
   font-weight: 600;
   color: var(--text-primary);
   transition: color var(--transition-fast);
+  display: block;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
 a.detailValue {
@@ -95,6 +134,10 @@ a.detailValue:hover {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), var(--glow-violet-subtle);
   position: relative;
   z-index: 20;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .formTitle {
@@ -120,6 +163,7 @@ a.detailValue:hover {
 .select,
 .textarea {
   width: 100%;
+  box-sizing: border-box;
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
   background: rgba(11, 8, 24, 0.8);
@@ -175,9 +219,52 @@ a.detailValue:hover {
   color: #fca5a5;
 }
 
+/* Tablet & Mobile Breakpoints */
 @media (max-width: 868px) {
   .contactGrid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .detailsList {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .canvasWrapper {
+    height: 250px;
+    transform: translateY(-25px);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactGrid {
+    gap: 2rem;
+  }
+
+  .formCard {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .canvasWrapper {
+    height: 200px;
+    transform: translateY(-15px);
+    margin-bottom: 0.5rem;
+  }
+
+  .detailCard {
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .detailIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .detailValue {
+    font-size: 0.88rem;
   }
 }

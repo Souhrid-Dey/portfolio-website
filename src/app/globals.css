@@ -14,6 +14,7 @@ html {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 body {
@@ -86,6 +87,8 @@ button {
   padding-bottom: var(--space-3xl);
   position: relative;
   z-index: 1;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 /* Section Header Styles */

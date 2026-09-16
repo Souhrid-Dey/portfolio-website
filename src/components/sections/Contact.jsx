@@ -87,8 +87,8 @@ export default function Contact() {
         <FadeIn delay={0.2}>
           <div className={styles.contactGrid}>
             {/* Direct Connect Info */}
-            <div className={styles.contactInfo} style={{ position: 'relative' }}>
-              <div style={{ marginBottom: '2rem', position: 'relative', zIndex: 10 }}>
+            <div className={styles.contactInfo}>
+              <div style={{ marginBottom: '1.5rem', position: 'relative', zIndex: 10 }}>
                 <h3 className={styles.infoTitle}>Let’s Build Something Impactful</h3>
                 <p className={styles.infoDesc}>
                   Whether you have an opening for a <strong>Data Scientist</strong> or <strong>ML Engineer</strong>, 
@@ -96,8 +96,8 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Data Core Canvas - Relative flow to create space between text and links. Transformed up 20% */}
-              <div style={{ position: 'relative', width: '100%', height: '320px', zIndex: 1, marginBottom: '2rem', transform: 'translateY(-64px)', pointerEvents: 'none' }}>
+              {/* Data Core Canvas - Bounded with overflow hidden and mobile breakpoint scaling */}
+              <div className={styles.canvasWrapper}>
                 <DataCore3D />
               </div>
 
@@ -106,7 +106,7 @@ export default function Contact() {
                   <div className={styles.detailIcon}>
                     <Mail size={20} />
                   </div>
-                  <div>
+                  <div className={styles.detailText}>
                     <div className={styles.detailLabel}>Direct Email</div>
                     <a href={`mailto:${siteConfig.email}`} className={styles.detailValue}>
                       {siteConfig.email}
@@ -119,7 +119,7 @@ export default function Contact() {
                     <div className={styles.detailIcon}>
                       <Mail size={20} />
                     </div>
-                    <div>
+                    <div className={styles.detailText}>
                       <div className={styles.detailLabel}>R&D / Collaborations</div>
                       <a href={`mailto:${siteConfig.lab_email}`} className={styles.detailValue}>
                         {siteConfig.lab_email}
@@ -132,7 +132,7 @@ export default function Contact() {
                   <div className={styles.detailIcon}>
                     <MapPin size={20} />
                   </div>
-                  <div>
+                  <div className={styles.detailText}>
                     <div className={styles.detailLabel}>Current Location</div>
                     <a
                       href="https://www.google.com/maps/place/Pune,+Maharashtra,+India"
@@ -149,7 +149,7 @@ export default function Contact() {
                   <div className={styles.detailIcon}>
                     <LinkedinIcon size={20} />
                   </div>
-                  <div>
+                  <div className={styles.detailText}>
                     <div className={styles.detailLabel}>Professional Network</div>
                     <a
                       href="https://www.linkedin.com/in/souhrid-dey/"

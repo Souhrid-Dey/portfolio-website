@@ -246,7 +246,7 @@ function NeuralEngineObject() {
 
 export default function DataCore3D() {
   return (
-    <div style={{ height: '360px', width: '100%', position: 'relative' }}>
+    <div style={{ height: '100%', width: '100%', maxWidth: '100%', position: 'relative', overflow: 'hidden' }}>
       <Canvas
         camera={{ position: [0, 0.3, 5.2], fov: 45 }}
         style={{ pointerEvents: 'none' }}
