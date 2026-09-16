@@ -29,7 +29,7 @@ export default function About() {
             <div className={styles.avatarColumn}>
               <div className={styles.avatarCard}>
                 <Image
-                  src="/images/avatar.png"
+                  src="/images/avatar.jpg"
                   alt="Souhrid Dey — Data Scientist & Machine Learning Engineer"
                   className={styles.avatarImg}
                   fill
